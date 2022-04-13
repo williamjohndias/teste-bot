@@ -23,7 +23,7 @@ const buttons = () => Extra.markup(
 
 // bot.launch()
 bot.start( async content => {
-    const name = content.update.message.from.
+    const name = content.update.message.from.first_name
     
     await content.reply(`Seja Bem-Vindo(a), ${name}`)
     await content.reply('Digite os produtos que deseja adcionar ao carrinho')
