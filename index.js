@@ -18,6 +18,11 @@ bot.start(content => {
     content.reply(` Bem-Vindo, ${from.first_name}!`)
 })
 
+bot.on('text', {content, next) => {
+    content.reply('TipsCode...')
+    next()
+})
+
 // bot.launch()
 bot.startPolling()
 
