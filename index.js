@@ -11,22 +11,37 @@ app.get('/', function (req, res) {
 })
 
 
-bot.start(content => {
-    const from = content.update.message.from
-    
-    console.log(from)
-    
-    content.reply(` Bem-Vindo, ${from.first_name}!`)
-})
+let list = []
 
-bot.on('text', (content, next) => {
-    content.reply('TipsCode...')
-    next()
-})
+const buttons = () => Extra.markup(
+    Markup.inlineKeyboard(
+        list.map(item => Markup.callbackButton(item, `delete ${item}`)),
+        { columns: 3}
+    )
+)
+    
 
 // bot.launch()
+bot.start( async content => {
+    const name = content.update.message.from.
+    
+    await content.reply(`Seja Bem-Vindo(a), ${name}`)
+    await content.reply('Digite os produtos que deseja adcionar ao carrinho')
+})
+
+bot.on('text', content => {
+    list.push(content.update.message.text)
+    content.reply(`${content.update.message.text} Produto adcionado`, buttons() )
+})
+
+bot.action(/delete (.+)/, content => item !== content.match[1] )
+
+content.reply(`${content.match[1]} deletado`, buttons())
+
 bot.startPolling()
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('Server started on port 3000')
 })
+
+
