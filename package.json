@@ -12,6 +12,6 @@
   "description": "",
   "dependencies": {
     "express": "^4.17.3",
-    "telegraf": "^4.7.0"
+    "telegraf": "^3.17.3"
   }
 }
