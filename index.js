@@ -16,6 +16,7 @@ bot.start(content => {
     console.log(from)
     
     content.reply(`Bem-Vindo, ${from.first_name}!`)
+})
 
 // bot.launch()
 bot.startPolling()
