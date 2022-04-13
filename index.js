@@ -1,5 +1,5 @@
 const express = require('express')
-
+const Telegraf = require('./.env')
 const { Telegraf } = require('telegraf')
 
 const bot = new Telegraf(env.token)
