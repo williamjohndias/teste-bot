@@ -1,8 +1,7 @@
 const express = require('express')
-const Telegraf = require('./.env')
 const { Telegraf } = require('telegraf')
 
-const bot = new Telegraf(env.token)
+const bot = new Telegraf('5336650916:AAGKvE2eiIrcy7EP9ZM4BD9sc0QQsNVdGhw')
 
 const app = express()
 app.get('/', function (req, res) {
