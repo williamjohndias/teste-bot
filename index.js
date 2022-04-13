@@ -15,7 +15,7 @@ bot.start(content => {
     
     console.log(from)
     
-    content.reply(`Bem-Vindo, ${from.first_name}!`)
+    content.reply(` Bem-Vindo, ${from.first_name}!`)
 })
 
 // bot.launch()
