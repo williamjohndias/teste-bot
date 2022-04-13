@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 })
 
 
-bot.start((ctx) => ctx.reply('Welcome'))
+bot.start((ctx) => ctx.reply('bem-vindo, ${from.first_name}!'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.on('sticker', (ctx) => ctx.reply('👍'))
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
