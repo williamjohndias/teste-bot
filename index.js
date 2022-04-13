@@ -10,10 +10,12 @@ app.get('/', function (req, res) {
 })
 
 
-bot.start((ctx) => ctx.reply('Bem-vindo'))
-bot.help((ctx) => ctx.reply('Send me a sticker'))
-bot.on('sticker', (ctx) => ctx.reply('👍'))
-bot.hears('hi', (ctx) => ctx.reply('Hey there'))
+bot.start(content => {
+    const from = content.update.message.from
+    
+    console.log(from)
+    
+    content.reply(`Bem-Vindo, ${from.first_name}!`)
 
 // bot.launch()
 bot.startPolling()
