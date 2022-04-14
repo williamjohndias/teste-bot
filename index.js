@@ -16,7 +16,7 @@ let list = []
 const buttons = () => Extra.markup(
     Markup.inlineKeyboard(
         list.map(item => Markup.callbackButton(item, `delete ${item}`)),
-        { columns: 3}
+        { columns: 2}
     )
 )
     
@@ -34,14 +34,15 @@ bot.on('text', content => {
     content.reply(`${content.update.message.text} Produto adcionado`, buttons() )
 })
 
-bot.action(/delete (.+)/, content => item !== content.match[1] )
-
-content.reply(`${content.match[1]} deletado`, buttons())
+bot.action(/delete (.+)/, content => {
+    list = list.filter(item => item !== content.match[1])   
+    content.reply(`${content.match[1]} deletado`, buttons())
+})
 
 bot.startPolling()
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('Server started on port 3000')
+    console.log('Server rodando na porta 3000')
 })
 
 
