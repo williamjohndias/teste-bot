@@ -1,11 +1,13 @@
 const express = require('express')
-const { Telegraf } = require('telegraf')
-const Extra = require('telegraf/extra')
-const Markup = require('telegraf/markup')
+
+const { Telegraf } = require('telegraf');
+const Extra = require('telegraf/extra');
+const Markup = require('telegraf/markup');
 
 const bot = new Telegraf('5336650916:AAGKvE2eiIrcy7EP9ZM4BD9sc0QQsNVdGhw')
 
 const app = express()
+
 app.get('/', function (req, res) {
     res.send("Rodando!!")
 })
